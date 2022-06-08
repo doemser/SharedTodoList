@@ -5,8 +5,14 @@ export default function JoinLobby() {
   const [name, setName] = useState("");
   const { setPerson, joinLobby } = useStore();
 
+  const randomNumberBetween = (min, max) =>
+    Math.floor(Math.random() * (max - min + 1) + min);
+
   function randomColor() {
-    return `hsl(${Math.ceil(Math.random() * 360)},40%,50%)`;
+    return `hsl(${randomNumberBetween(180, 360)},${randomNumberBetween(
+      40,
+      75
+    )}%,${randomNumberBetween(40, 75)}%)`;
   }
 
   return (
